@@ -1,5 +1,3 @@
-# s3toredshift
-Programmly deploy aws Instructions by terraform 
 # README #
 1. get the IAM access from aws
 2. run the code
