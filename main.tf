@@ -249,7 +249,7 @@ resource "aws_redshift_cluster" "geodata1" {
   cluster_identifier        = "tf-redshift-cluster12"
   database_name             = "sub123"
   master_username           = "root"
-  master_password           = "Mm0212930581"
+  master_password           = "Mm02"
   node_type                 = "dc2.large"
   cluster_type              = "single-node"
   iam_roles                 = ["${aws_iam_role.redshift_role.arn}"]
