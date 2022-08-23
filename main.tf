@@ -227,7 +227,7 @@ tags = {
 resource "aws_glue_connection" "gluetoredshift2" {
   connection_properties = {
     JDBC_CONNECTION_URL = "jdbc:redshift://${aws_redshift_cluster.geodata1.endpoint}/sub123"
-    PASSWORD            = "Mm0212930581"
+    PASSWORD            = "Mm0212930"
     USERNAME            = "root"
     JDBC_ENFORCE_SSL    = "false"
   }
@@ -246,7 +246,7 @@ resource "aws_glue_connection" "gluetoredshift2" {
 resource "aws_glue_crawler" "toredshift" {
   database_name = "geo123"
   name          = "geo123"
-  role         = "arn:aws:iam::037790644174:role/service-role/AWSGlueServiceRole-abc"
+  role         = "arn:aws:iam::--"
 
   jdbc_target {
     connection_name = "gluetoredshift2"
@@ -258,12 +258,12 @@ resource "aws_glue_crawler" "toredshift" {
 ###glue_job begin
 resource "aws_glue_job" "froms3toredshift123" {
   name     = "froms3toredshift123"
-  role_arn = "arn:aws:iam::037790644174:role/service-role/AWSGlueServiceRole-abc"
+  role_arn = "arn:aws:iam::--"
   connections            = [aws_glue_connection.gluetoredshift2.name]
   default_arguments      = {
     "--job-language"        = "python"
     "--job-bookmark-option" = "job-bookmark-disable"
-    "--TempDir"             = "s3://aws-glue-temporary-037790644174-ap-northeast-1/kate.liu@onfinality.io"
+    "--TempDir"             = "s3://--"
   }
   glue_version           = "2.0"
   worker_type            = "G.1X"
