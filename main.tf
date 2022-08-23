@@ -300,7 +300,7 @@ resource "aws_glue_job" "froms3toredshift123" {
   default_arguments      = {
     "--job-language"        = "python"
     "--job-bookmark-option" = "job-bookmark-disable"
-    "--TempDir"             = "s3://aws-glue-temporary-037790644174-ap-northeast-1/kate.liu@onfinality.io"
+    "--TempDir"             = "s3://"
   }
   glue_version           = "2.0"
   worker_type            = "G.1X"
